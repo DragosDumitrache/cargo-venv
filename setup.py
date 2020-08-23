@@ -22,7 +22,7 @@ setup(
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
 
-    url='https://github.com/dragosdumitrache/git-sentry',  # Optional
+    url='https://github.com/dragosdumitrache/cargo-venv',  # Optional
     author='Dragos Dumitrache',  # Optional
     author_email='dragos@afterburner.dev',  # Optional
 
@@ -56,7 +56,7 @@ setup(
         ],
     },
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/dragosdumitrache/git-sentry/issues',
-        'Source': 'https://github.com/dragosdumitrache/git-sentry/',
+        'Bug Reports': 'https://github.com/dragosdumitrache/cargo-venv/issues',
+        'Source': 'https://github.com/dragosdumitrache/cargo-venv/',
     },
 )

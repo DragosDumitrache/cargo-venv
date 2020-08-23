@@ -37,17 +37,18 @@ set -gx VIRTUAL_ENV %{VENV_DIRECTORY}%
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
+set -gx PATH "$VIRTUAL_ENV/.cargo/bin" $PATH
 
 # unset CARGOHOME if set
 #if set -q CARGO_HOME
 set -gx _OLD_VIRTUAL_CARGOHOME $CARGO_HOME
 #end
-set -gx CARGO_HOME %{VENV_DIRECTORY}%
+set -gx CARGO_HOME %{VENV_DIRECTORY}%/.cargo
 
 #if set -q RUSTUP_HOME
 set -gx _OLD_VIRTUAL_RUSTUP_HOME $RUSTUP_HOME
 #end
-set -gx RUSTUP_HOME %{VENV_DIRECTORY}%
+set -gx RUSTUP_HOME %{VENV_DIRECTORY}%/.rustup
 
 if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
     # fish uses a function instead of an env var to generate the prompt.
