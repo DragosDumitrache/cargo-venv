@@ -7,6 +7,8 @@ A virtual environment tool similar to Python's virtual environments.
 * [Installation](#installation)
 * [Usage](#usage)
     * [Custom toolchain](#custom-toolchain)
+    * [IDE Support](#ide-support)
+        * [IntelliJ Idea](#intellij-idea)
 
 ## Installation
 
@@ -29,3 +31,15 @@ cargo-venv custom-name
 ### Custom toolchain
 You can also specify a custom toolchain rather than always depend on the latest. If a `rust-toolchain` file is discovered
 in your project, that version will be used to install the toolchain inside your virtual environment.
+
+### IDE Support
+#### IntelliJ Idea
+Under `Settings > Languages and Frameworks > Rust` set the following fields to these values:
+#### Toolchain Location
+```
+<venv-path>/.rustup/toolchains/<toolchain-version>/bin
+```
+#### Standard library 
+```
+<venv-path>/.rustup/toolchains/<toolchain-version>/lib/rustlib/src/rust
+```
