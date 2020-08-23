@@ -7,14 +7,14 @@ function deactivate --description 'Exit virtualenv and return to normal shell en
         set -gx PATH $_OLD_VIRTUAL_PATH
         set -e _OLD_VIRTUAL_PATH
     end
-    if test -n "$_OLD_VIRTUAL_CARGOHOME"
-        set -gx CARGO_HOME $_OLD_VIRTUAL_CARGOHOME
-        set -e _OLD_VIRTUAL_CARGOHOME
-    end
-    if test -n "$_OLD_VIRTUAL_RUSTUP_HOME"
-        set -gx RUSTUP_HOME $_OLD_VIRTUAL_RUSTUP_HOME
-        set -e _OLD_VIRTUAL_RUSTUP_HOME
-    end
+#    if test -n "$_OLD_VIRTUAL_CARGOHOME"
+    set -gx CARGO_HOME $_OLD_VIRTUAL_CARGOHOME
+    set -e _OLD_VIRTUAL_CARGOHOME
+#    end
+#    if test -n "$_OLD_VIRTUAL_RUSTUP_HOME"
+    set -gx RUSTUP_HOME $_OLD_VIRTUAL_RUSTUP_HOME
+    set -e _OLD_VIRTUAL_RUSTUP_HOME
+#    end
 
     if test -n "$_OLD_FISH_PROMPT_OVERRIDE"
         functions -e fish_prompt
@@ -39,16 +39,15 @@ set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
 
 # unset CARGOHOME if set
-if set -q CARGO_HOME
-    set -gx _OLD_VIRTUAL_CARGOHOME $CARGO_HOME
-end
+#if set -q CARGO_HOME
+set -gx _OLD_VIRTUAL_CARGOHOME $CARGO_HOME
+#end
 set -gx CARGO_HOME %{VENV_DIRECTORY}%
 
-if set -q RUSTUP_HOME
-    set -gx _OLD_VIRTUAL_RUSTUP_HOME $RUSTUP_HOME
-end
+#if set -q RUSTUP_HOME
+set -gx _OLD_VIRTUAL_RUSTUP_HOME $RUSTUP_HOME
+#end
 set -gx RUSTUP_HOME %{VENV_DIRECTORY}%
-
 
 if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
     # fish uses a function instead of an env var to generate the prompt.

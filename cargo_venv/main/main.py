@@ -39,7 +39,6 @@ def main(name):
                 toolchain_version = toolchain_file.read().rstrip()
                 commands += [f'rustup toolchain install {toolchain_version}']
         commands += ['deactivate']
-        print(commands)
         subprocess.run(' && '.join(commands), shell=True, executable=shell)
 
 
