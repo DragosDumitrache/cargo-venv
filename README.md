@@ -37,7 +37,7 @@ in your project, that version will be used to install the toolchain inside your 
 Under `Settings > Languages and Frameworks > Rust` set the following fields to these values:
 #### Toolchain Location
 ```
-<venv-path>/.cargo/bin
+<venv-path>/.rustup/toolchains/<toolchain-version>/bin
 ```
 #### Standard library 
 ```
