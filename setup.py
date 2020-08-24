@@ -48,6 +48,7 @@ setup(
 
     keywords='git user access management',  # Optional
     packages=find_packages(),  # Required
+    package_data={'cargo_venv.main.templates': ['activate', 'activate.csh', 'activate.fish']},
     python_requires='>=3.7',
     install_requires=requirements,  # Optional
     entry_points={  # Optional
