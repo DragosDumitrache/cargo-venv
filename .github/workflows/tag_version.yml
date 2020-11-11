@@ -9,7 +9,9 @@ on:
 
 jobs:
   build:
-    runs-on: dragosd2000/versioner
+    runs-on: ubuntu-latest
+    container:
+      image: dragosd2000/versioner:latest
     steps:
       - uses: actions/checkout@v2
         with:
