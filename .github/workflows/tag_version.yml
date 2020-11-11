@@ -10,16 +10,12 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: repo
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: repo
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Bump version and push tag
         id: tag_version
         run: |
