@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    paths:
-      - '.github/workflows/tag_version.yml'
 
 defaults:
   run:
@@ -22,4 +19,5 @@ jobs:
       - name: Bump version and push tag
         id: tag_version
         run: |
-          versioner
+          git tag -a $(versioner) -m $(versioner)
+          git push --tags
