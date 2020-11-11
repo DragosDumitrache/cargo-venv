@@ -1,0 +1,23 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - master
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: dragosd2000/versioner:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          git fetch --prune --unshallow --tags
+      - name: Bump version and push tag
+        id: tag_version
+        run: |
+          git tag -a $(versioner) -m $(versioner)
+          git push --tags
