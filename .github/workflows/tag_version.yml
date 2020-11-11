@@ -14,6 +14,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: dragosd2000/versioner:latest
     steps:
       - uses: actions/checkout@v2
       - run: |
@@ -21,6 +22,4 @@ jobs:
       - name: Bump version and push tag
         id: tag_version
         run: |
-          ls
-          pwd
-          docker run -v $(pwd):/repo --rm dragosd2000/versioner
+          versioner
