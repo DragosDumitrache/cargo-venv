@@ -23,4 +23,6 @@ jobs:
       - name: Bump version and push tag
         id: tag_version
         run: |
+          ls
+          pwd
           docker run -v $(pwd):/repo --rm dragosd2000/versioner
