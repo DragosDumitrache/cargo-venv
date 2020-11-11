@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    paths:
+      - '.github/workflows/tag_version.yml'
+
 jobs:
   build:
     runs-on: dragosd2000/versioner
